@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="description" content="Interactive Pillar 2 Workiva-style workflow demo" />
+  <title>Pillar 2 Interactive Demo</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="showcase-header">
+    <div class="showcase-brand">
+      <img class="atc-logo" src="atc-logo.png" alt="Advance Tax Compliance" />
+      <div class="showcase-divider"></div>
+      <strong>Pillar 2 Clickable Demo</strong>
+    </div>
+    <a class="contact-atc" href="https://forms.monday.com/forms/bb17886dd99a3976c0b35307ed38c6fa?r=use1" target="_blank" rel="noopener noreferrer">Contact ATC</a>
+  </header>
+
+  <main class="showcase-page">
+    <section class="browser-frame" aria-label="Pillar 2 clickable demo">
+      <div class="browser-chrome">
+        <div class="browser-dots" aria-hidden="true"><span></span><span></span><span></span></div>
+        <div class="browser-title">Pillar 2 Clickable Demo</div>
+        <div class="browser-expand" aria-hidden="true">⛶</div>
+      </div>
+      <div class="browser-content">
+        <div class="app-shell">
+    <aside class="demo-sidebar">
+      <div class="brand">
+        <div class="brand-mark">W</div>
+        <div><strong>Pillar 2</strong><span>Interactive workflow demo</span></div>
+      </div>
+
+      <div class="progress-copy"><span>Demo progress</span><strong id="progress-text">Step 1 of 6</strong></div>
+      <div class="progress-track"><span id="progress-bar"></span></div>
+      <nav id="step-nav" class="step-nav" aria-label="Pillar 2 workflow"></nav>
+
+      <section class="data-flow-card" aria-label="Pillar 2 data flow">
+        <div class="data-flow-title"><strong>Data flow</strong><span>Live demo state</span></div>
+        <div id="data-flow" class="data-flow"></div>
+      </section>
+
+      <button id="restart-demo" class="restart-button" type="button">↻ Restart demo</button>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <h1 id="page-title">Entity Administration</h1>
+        <div class="top-actions">
+          <span id="step-status" class="status-pill">Not shared</span>
+          <button id="show-help" class="help-button" type="button">? Guide</button>
+        </div>
+      </header>
+
+      <section class="instruction-banner" id="instruction-banner">
+        <div class="instruction-number" id="instruction-number">1</div>
+        <div class="instruction-text"><strong id="instruction-title"></strong><p id="instruction-copy"></p></div>
+      </section>
+
+      <section id="scenario-strip" class="scenario-strip hidden" aria-live="polite"></section>
+
+      <section class="workiva-window">
+        <aside class="workiva-iconbar" aria-hidden="true">
+          <div class="workiva-w">w</div><span>＋</span><span>⌂</span><span>□</span><span>◉</span><span>▤</span><span>▦</span><span>◇</span><span>⌘</span>
+        </aside>
+
+        <div class="workiva-workspace">
+          <header class="workiva-titlebar">
+            <div class="doc-title"><span class="sheet-icon">▦</span><span id="doc-title">Entity Administration - Version CW</span><span>×</span></div>
+            <div class="title-actions">⌕　✦　?　●　<span class="company-chip">HC&nbsp;&nbsp; Hallway Corporation</span></div>
+          </header>
+
+          <nav class="workiva-tabs"><button>File</button><button class="active">Edit</button><button>Data</button><button>View</button><button>Review</button></nav>
+
+          <div class="workiva-ribbon">
+            <div class="ribbon-item publish">▰<small>Publish</small></div>
+            <div class="ribbon-item">↶<small>Undo</small></div>
+            <div class="ribbon-item">↷<small>Redo</small></div>
+            <div class="ribbon-item">⚙<small>Properties</small></div>
+            <select><option>Table (Normal)</option></select><select><option>Arial</option></select><select class="short"><option>10</option></select>
+            <span class="ribbon-icons">A　✎　B　<i>I</i>　<u>U</u>　≡　▦　$　%　Σ</span>
+          </div>
+
+          <div class="workiva-body">
+            <aside class="sheet-tree">
+              <div class="tree-heading"><strong id="tree-title">Entity Administration - Version CW</strong><span>↥　↧　≡　⌁</span></div>
+              <div id="tree-items" class="tree-items"></div>
+            </aside>
+
+            <main class="sheet-area">
+              <div class="formula-bar"><span id="cell-ref">A1</span><span>×</span><span>✓</span><span>ƒx</span><strong id="formula-label">Fiscal Year</strong></div>
+              <div id="sheet-toolbar" class="sheet-context-toolbar"></div>
+              <div id="sheet-scroll" class="sheet-scroll"><table id="sheet-table" class="sheet-table" aria-label="Interactive Pillar 2 spreadsheet"></table></div>
+              <div class="sheet-scroll-hint">↔ Scroll horizontally to inspect all columns.</div>
+               <div id="sheet-bottom-scroll" class="sheet-bottom-scroll hidden" aria-label="Horizontal sheet scrollbar" role="scrollbar" aria-orientation="horizontal"><div id="sheet-bottom-scroll-spacer" class="sheet-bottom-scroll-spacer"></div></div>
+            </main>
+
+            <aside class="connections-panel">
+              <div class="connection-tabs">
+                <button id="incoming-tab" class="active" type="button">↪ Incoming</button>
+                <button id="outgoing-tab" type="button">↩ Outgoing</button>
+              </div>
+              <div class="connections-heading"><h3>Connections</h3><span>＋　↕　⌁　▽</span></div>
+              <div id="incoming-panel" class="connection-content"></div>
+              <div id="outgoing-panel" class="connection-content hidden"></div>
+            </aside>
+          </div>
+
+          <footer class="statusbar"><span id="status-copy">Dummy data · 2024 fiscal year</span><div>⌕　⌕　<strong>100%</strong>　⌄　♙</div></footer>
+        </div>
+      </section>
+
+      <div class="bottom-actions">
+        <button id="previous-step" class="secondary-button" type="button">← Previous</button>
+        <button id="next-step" class="primary-button" type="button" disabled>Next step →</button>
+      </div>
+    </main>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-card">
+      <button id="modal-close" class="modal-close" type="button">×</button>
+      <div class="modal-step" id="modal-step">STEP 1</div>
+      <h2 id="modal-title">Entity Administration</h2>
+      <p id="modal-copy"></p>
+      <div id="modal-tip" class="modal-tip"></div>
+      <div class="modal-actions"><button id="modal-back" class="secondary-button" type="button">Back</button><button id="modal-next" class="primary-button" type="button">Got it</button></div>
+    </div>
+  </div>
+
+  <div id="export-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="export-title">
+    <div class="modal-card export-card">
+      <button id="export-close" class="modal-close" type="button">×</button>
+      <div class="modal-step">FINAL OUTPUT</div>
+      <h2 id="export-title">Pillar 2 reporting dataset</h2>
+      <p>This is a dummy tabular preview. It is ready for downstream tagging / filing, but no regulatory submission is simulated.</p>
+      <pre id="export-preview"></pre>
+      <div class="modal-actions"><button id="download-excel" class="secondary-button" type="button">Download Excel</button><button id="download-csv" class="primary-button" type="button">Download CSV</button></div>
+    </div>
+  </div>
+
+  <div id="connection-toast" class="connection-toast hidden" role="status" aria-live="polite">
+    <div class="toast-info">i</div><div class="toast-body"><div class="toast-progress"><span id="connection-progress"></span></div><span id="connection-toast-text">Refreshing Connection</span></div><button id="connection-toast-close" type="button">×</button>
+  </div>
+  <div id="toast" class="toast hidden" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
